@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  site_monitor:
+    build: .
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./monitor.db:/app/monitor.db  # Persistência do SQLite
+    environment:
+      - TZ=America/Sao_Paulo
